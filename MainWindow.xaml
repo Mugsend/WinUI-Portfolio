@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="WinUIPortfolio.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WinUIPortfolio"
+    Title="Portfolio">
+
+    <NavigationView IsSettingsVisible="False" PaneDisplayMode="Left" SelectionChanged="NavView_SelectionChanged">
+        <NavigationView.MenuItems>
+            <NavigationViewItem Content="Home" Icon="Home" Tag="HomePage"/>
+            <NavigationViewItem Content="Projects" Icon="Document" Tag="ProjectsPage"/>
+            <NavigationViewItem Content="About" Icon="Contact" Tag="AboutPage"/>
+            <NavigationViewItem Content="Website" Icon="World" Tag="WebPage"/>
+        </NavigationView.MenuItems>
+        <NavigationView.Content>
+            <Frame x:Name="ContentFrame"/>
+        </NavigationView.Content>
+    </NavigationView>
+</Window>
+
