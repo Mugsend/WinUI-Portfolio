@@ -1,0 +1,44 @@
+<Page
+    x:Class="WinUIPortfolio.Pages.AboutPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WinUIPortfolio"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+
+    <Grid>
+        <!-- Background Image -->
+        
+
+        <!-- Content Overlay -->
+        <ScrollViewer>
+            
+            <StackPanel >
+                <Image Source="ms-appx:///Assets/CoverPhoto.jpg" MaxWidth="500"
+Stretch="UniformToFill" Margin="0 0 0 10"/>
+                <!-- Description Paragraph -->
+                <StackPanel Padding="20">
+                <TextBlock Text="When I'm not writing code, you can find me indulging in my love of classical, J-rock, and film scores, or catching up on my favorite movies and shows. Loving Vincent and Better Call Saul are particular favorites of mine and I've also cooked up my own soft synth and use it in making weird and chill soundscapes and IDM."
+                           TextWrapping="Wrap"
+                           Margin="0,0,0,20"
+                           FontSize="15"
+                           />
+
+                <!-- Links Section -->
+                <StackPanel >
+                    <TextBlock Text="Listen to my stuff:"
+                               FontWeight="Bold"
+                               Margin="0,0,0,10"/>
+                    <StackPanel>
+                        <HyperlinkButton Content="BandCamp"
+                                         NavigateUri="https://mugsend.bandcamp.com"
+                                         Margin="0,0,0,5"/>
+                        <HyperlinkButton Content="YouTube"
+                                         NavigateUri="https://www.youtube.com/@mugsend"
+                                         Margin="0,0,0,5"/>
+                    </StackPanel>
+                </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

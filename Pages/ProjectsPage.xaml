@@ -1,0 +1,39 @@
+<Page
+    x:Class="WinUIPortfolio.Pages.ProjectsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:models="using:WinUIPortfolio.Models"
+    xmlns:pages="using:WinUIPortfolio.Pages">
+	<Grid  Padding="20">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="CommonStates">
+                <VisualState x:Name="Error">
+                    <VisualState.Setters>
+                        <Setter Target="ErrorPanel.Visibility" Value="Visible" />
+                        <Setter Target="ReposListView.Visibility" Value="Collapsed" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <ProgressRing x:Name="LoadingIndicator"
+                      IsActive="True"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center"
+                      Width="50"
+                      Height="50"/>
+        <ListView x:Name="ReposListView">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="models:GitHubRepository">
+                    <StackPanel Margin="10">
+                        <TextBlock Text="{x:Bind Name}" FontWeight="Bold" />
+                        <TextBlock Text="{x:Bind Description}" TextWrapping="Wrap" />
+                        <HyperlinkButton Content="View on GitHub" NavigateUri="{x:Bind Html_Url}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackPanel x:Name="ErrorPanel" Visibility="Collapsed">
+            <TextBlock Text="An error has occurred." Foreground="Red" />
+        </StackPanel>
+    </Grid>
+</Page>

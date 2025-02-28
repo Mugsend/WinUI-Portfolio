@@ -1,0 +1,35 @@
+<Page
+    x:Class="WinUIPortfolio.Pages.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="20">
+			<!-- Profile Image -->
+			<Border Width="150" Height="150" CornerRadius="75" BorderBrush="Gray" BorderThickness="2">
+				<Image Source="ms-appx:///Assets/profile.webp" Stretch="UniformToFill"/>
+			</Border>
+
+			<!-- Name -->
+			<TextBlock Text="Sourabh Chaudhary"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       TextAlignment="Center"/>
+
+			<!-- Description -->
+            <TextBlock Text="I'm Sourabh, a CS graduate engineer with 2+ years of freelancing experience, specializing in building clean, functional, and innovative solutions."
+                       FontSize="16"
+                       TextAlignment="Center"
+                       TextWrapping="Wrap"
+                       MaxWidth="300"/>
+
+			<!-- Contact Button -->
+			<Button Content="Email Me!"
+                    Click="EmailButton_Click"
+                    HorizontalAlignment="Center"/>
+		</StackPanel>
+	</Grid>
+</Page>
